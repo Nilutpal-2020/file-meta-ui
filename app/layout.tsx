@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Analytics } from "@vercel/analytics/next"
 
 // Load fonts
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -113,11 +114,13 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-slate-50 text-slate-900">
+        <Analytics />
         <Navbar />
         <main className="min-h-screen">
           {children}
         </main>
         <Footer />
+
       </body>
     </html>
   );
